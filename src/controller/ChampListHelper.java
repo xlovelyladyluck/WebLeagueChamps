@@ -83,6 +83,14 @@ static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("
 		return foundItems;
 	}
 	
+	public ListChamp searchForChampById(int idToEdit) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		ListChamp found = em.find(ListChamp.class, idToEdit);
+		em.close();
+		return found;
+	}
+	
 	public void cleanUp() {
 		emfactory.close();
 	}

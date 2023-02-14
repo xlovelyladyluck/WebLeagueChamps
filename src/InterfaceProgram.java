@@ -47,18 +47,18 @@ public class InterfaceProgram {
 			in.nextLine();
 			List<ListChamp> foundItems;
 			if (searchBy == 1) {
-				System.out.print("Enter the store name: ");
+				System.out.print("Enter the Champ name: ");
 				String champName = in.nextLine();
 				foundItems = clh.searchForChampByName(champName);
 				
 			} else {
-				System.out.print("Enter the item: ");
+				System.out.print("Enter the Rank: ");
 				String funRank = in.nextLine();
 				foundItems = clh.searchForChampByRank(funRank);
 
 			}
 
-			/*if (!foundItems.isEmpty()) {
+			if (!foundItems.isEmpty()) {
 				System.out.println("Found Results.");
 				for (ListChamp l : foundItems) {
 					System.out.println(l.getId() + " : " + l.toString());
@@ -66,7 +66,7 @@ public class InterfaceProgram {
 				System.out.print("Which ID to edit: ");
 				int idToEdit = in.nextInt();
 
-				List<ListChamp> toEdit = clh.searchForChampById(idToEdit);
+				ListChamp toEdit = clh.searchForChampById(idToEdit);
 				System.out.println("Retrieved " + toEdit.getFunRank() + " from " + toEdit.getChampName());
 				System.out.println("1 : Update Champ");
 				System.out.println("2 : Update Rank");
@@ -85,7 +85,7 @@ public class InterfaceProgram {
 
 				clh.updateItem(toEdit);
 
-			}*/ if(!foundItems.isEmpty()) {
+			}if(!foundItems.isEmpty()) {
 				System.out.println("---- No results found");
 			}
 
