@@ -3,9 +3,24 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Champion and Fun Rank listing</title>
+<script>
+function validate() {
+    
+    if( document.myForm.champName.value == "" ) {
+       alert( "Please provide your name!" );
+       document.myForm.Name.focus() ;
+       return false;
+    }
+    if( document.myForm.funRank.value == "" ) {
+       alert( "Please provide a rank for fun!" );
+       document.myForm.funRank.focus() ;
+       return false;
+    } 
+    return( true );
+}</script>
 </head>
 <body>
-<form action= "addChampServlet" method="post">
+<form action= "addChampServlet" method="post" name="myForm">
 Champion: <input type="text" name="champName">
 Fun-rank: <input type="text" name="funRank">
 <input type="submit" value="Add Item">
